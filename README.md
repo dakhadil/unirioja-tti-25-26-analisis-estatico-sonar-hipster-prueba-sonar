@@ -5,8 +5,6 @@
 
 A powerful and friendly heuristic search library implemented in Java.
 
-Test of Sonar
-
 ## What's Hipster4j?
 
 The aim of Hipster4j is to provide an easy to use yet powerful and flexible type-safe Java library for heuristic search. 
