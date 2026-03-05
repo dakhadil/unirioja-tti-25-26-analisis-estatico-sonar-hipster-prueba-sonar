@@ -70,6 +70,10 @@ public class BreadthFirstSearch<A,S,N extends Node<A,S,N>> extends Algorithm<A,S
 
         @Override
         public N next() {
+            if (!hasNext()) {
+                throw new java.util.NoSuchElementException();
+            }
+
             // Take next node
             N current = queue.poll();
             for(N successorNode : expander.expand(current)){
