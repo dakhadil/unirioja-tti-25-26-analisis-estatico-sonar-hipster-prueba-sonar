@@ -29,7 +29,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-
 public class HashTableHipsterGraphTest {
     protected HashTableHipsterGraph<String, Double> graph;
 
@@ -59,7 +58,14 @@ public class HashTableHipsterGraphTest {
 
     @Test
     public void testRemoveEdge() throws Exception {
+        UndirectedEdge<String, Double> edge = new UndirectedEdge<String, Double>("A", "B", 4d");
 
+        // Comprobamos que la arista existe antes de eliminarla
+        assertTrue(Sets.newHashSet(graph.edges()).contains(edge));
+
+        // Eliminamos la arista y verificamos que ya no está
+        graph.removeEdge(edge);
+        assertFalse(Sets.newHashSet(graph.edges()).contains(edge));
     }
 
     @Test
